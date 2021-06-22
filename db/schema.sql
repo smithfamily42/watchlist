@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS cool_db;
+
+CREATE DATABASE cool_db;
