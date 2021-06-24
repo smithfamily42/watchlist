@@ -1,4 +1,3 @@
-// import all models
 const User = require('./User');
-
-module.exports = { User };
+const Movie = require('./Movie');
+module.exports = { User, Movie };
