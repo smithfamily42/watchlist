@@ -1,63 +1,51 @@
-const { Model, DataTypes } = require('sequelize');
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
 
-// create our User model
-class User extends Model {
-  // set up method to run on instance data (per user) to check password
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
-
-// create fields/columns for User model
-User.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            match: [/.+@.+\..+/, 'Must use a valid email address'],
+        },
+        password: {
+            type: String,
+            required: true,
+        },
+        friends: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }],
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [4]
-      }
+    // set this to use virtual below
+    {
+        toJSON: {
+            virtuals: true,
+        },
     }
-  },
-  {
-    hooks: {
-      // set up beforeCreate lifecycle "hook" functionality
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-
-      async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        return updatedUserData;
-      }
-    },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user'
-  }
 );
+
+// hash user password
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+});
+
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
+
+const User = model('User', userSchema);
 
 module.exports = User;
