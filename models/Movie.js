@@ -3,14 +3,38 @@
 //able to delete if wanted
 
 
-router.get('/', (req, res) => {
+const { Schema, model } = require('mongoose');
 
-});
+const movieSchema = new Schema(
+    {
+        externalMovieId: {
+            type: Number,
+            required: true,
+            unique: true
+        },
+        rating: {
+            type: Number,
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        overview: {
+            type: String,
+            required: true,
+        },
+        releaseDate: {
+            type: String,
+        },
+        poster: {
+            type: String,
+        },
+        trailer: {
+            type: String,
+        },
+    }
+);
 
-router.post('/', (req, res) => {
+const Movie = model('Movie', movieSchema);
 
-});
-
-router.delete('/:id', (req, res) => {
-
-});
+module.exports = Movie;
