@@ -1,13 +1,26 @@
-
-<h1>Show Watchlist</h1>
-<!-- Print out the type, pet boolean and fierceness of all the animals. -->
-<ul>
-  {{#each shows}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Genre: {{genre}}</p>
-    <p>Rating: {{rating}}</p>
-    <p>Service: {{service}}</p>
-  </li>
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Service</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each shows}}
+          <tr>
+            <th scope="row">{{title}}</th>
+            <td>{{genre}}</td>
+            <td>{{rating}}</td>
+            <td>{{service}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
