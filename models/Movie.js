@@ -46,7 +46,7 @@ Movie.init (
         underscored: true,
         //makes sure that it adds an underscore like user_id in table based on how it's written in js
         modelName: 'movie'
-        //sequialize tends to add an 's' to the model name, so if you don't want that then claim the model name here
+        //sequelize tends to add an 's' to the model name, so if you don't want that then claim the model name here
     }
 )
 

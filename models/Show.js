@@ -2,68 +2,50 @@
 //be able to update status wishlist, currently watching or started watching, and finished watching
 //able to delete if wanted
 
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const userSchema = new Schema(
+class Show extends Model {
+
+}
+
+
+//initializing table definition
+Show.init (
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            //the only primary key = id = no duplicates
+            autoIncrement: true
         },
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-            match: [/.+@.+\..+/, 'Must use a valid email address'],
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        password: {
-            type: String,
-            required: true,
+        genre: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        friends: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-        }],
-        likedMovies: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Movie',
-            validate: (arr) => {
-                return arr.filter(v => v === null).length === 0; 
-            }
-        }],
-        dislikedMovies: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Movie',
-            validate: (arr) => {
-                return arr.filter(v => v === null).length === 0; 
-            }
-        }]
+        rating: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        service: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },
-    // set this to use virtual below
     {
-        toJSON: {
-            virtuals: true,
-        },
+        sequelize,
+        //call in connection
+        timestamps: false,
+        //making timestamp false will NOT add created_at and updated_at columns in DB 
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'show'
     }
-);
+)
 
-// hash user password
-userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-        const saltRounds = 10;
-        this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-
-    next();
-});
-
-// custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
-};
-
-const User = model('User', userSchema);
-
-module.exports = User;
+module.exports = Show;
