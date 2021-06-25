@@ -3,38 +3,52 @@
 //able to delete if wanted
 
 
-const { Schema, model } = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+//allows us to find define our table
+const sequelize = require('../config/connection');
+//allows us to connect to db
 
-const movieSchema = new Schema(
+class Movie extends Model {
+
+}
+
+Movie.init (
     {
-        externalMovieId: {
-            type: Number,
-            required: true,
-            unique: true
-        },
-        rating: {
-            type: Number,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            //the only primary key = id = no duplicates
+            autoIncrement: true
         },
         title: {
-            type: String,
-            required: true,
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        overview: {
-            type: String,
-            required: true,
+        genre: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        releaseDate: {
-            type: String,
+        rating: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
-        poster: {
-            type: String,
-        },
-        trailer: {
-            type: String,
-        },
+        studio: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        //works with modelName to make sure it doesn't add the 's'. TRUE = if you want to change the modelName
+        underscored: true,
+        //makes sure that it adds an underscore like user_id in table based on how it's written in js
+        modelName: 'movie'
+        //sequialize tends to add an 's' to the model name, so if you don't want that then claim the model name here
     }
-);
-
-const Movie = model('Movie', movieSchema);
+)
 
 module.exports = Movie;
+//To be able to use 'Movie' in other files
