@@ -39,6 +39,7 @@ Movie.init (
         }
     },
     {
+        //THIS IS GOING INTO DB
         sequelize,
         timestamps: false,
         freezeTableName: true,

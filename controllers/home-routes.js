@@ -25,3 +25,7 @@ router.delete('/:id', (req, res) => {
 
 
 module.exports = router;
+
+
+//Renders to show what page we're on
+//api routes deliver info from DB or third party apis
