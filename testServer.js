@@ -85,13 +85,19 @@ app.get('/all-shows', (req, res) => {
     res.render('shows', data);
   });
 
+app.get('/login', (req, res) => {
+  const data = {
+    pageTitle: 'Login'
+  };
+  res.render("login", data);
+});
+
 app.get('/', (req, res) => {
     const data = {
         pageTitle: 'Homepage'
     };
     res.render("index", data);
-})
-
+});
 
 /*app.get('/all-non-pets', (req, res) => {
   // Handlebars requires an object to be sent to the index.handlebars file.
