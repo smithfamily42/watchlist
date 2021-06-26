@@ -76,7 +76,6 @@ router.post('/login', (req, res) => {
   });
 });
 
-
 //log out destroying cookie session
 router.post('/logout', (req,res) => {
   if (req.session.loggedIn){

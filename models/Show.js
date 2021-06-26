@@ -35,6 +35,19 @@ Show.init (
         service: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        //this will specific to the user
+        //will only give back shows that specific user is watching
+        //can add in get route with a where parameter
+        show_user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                //getting from user model
+                key: 'id'
+                //getting the column were going to associate with
+            }
         }
     },
     {

@@ -36,6 +36,16 @@ Movie.init (
         studio: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        movie_user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                //getting from user model
+                key: 'id'
+                //getting the column were going to associate with
+            }
         }
     },
     {
