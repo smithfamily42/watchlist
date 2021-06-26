@@ -19,6 +19,10 @@ const sess = {
   })
 };
 
+
+
+//cookie session is used to see if the user is logged in
+
 app.use(session(sess));
 
 const hbs = exphbs.create({});

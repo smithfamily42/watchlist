@@ -7,3 +7,4 @@ const withAuth = (req, res, next) => {
 };
 
 module.exports = withAuth;
+//function to protect routes so that you can only see certain routes if you are logged in 

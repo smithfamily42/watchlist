@@ -1,0 +1,26 @@
+<div class="container justify-content-around">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Studio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each movies}}
+          <tr>
+            <th scope="row">{{title}}</th>
+            <td>{{genre}}</td>
+            <td>{{rating}}</td>
+            <td>{{studio}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
