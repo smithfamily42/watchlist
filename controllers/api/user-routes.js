@@ -76,10 +76,17 @@ router.post('/login', (req, res) => {
   });
 });
 
+
+//log out destroying cookie session
 router.post('/logout', (req,res) => {
-
+  if (req.session.loggedIn){
+    req.session.destroy(() => {
+      res.status(204).end();
+    }); 
+  }
+  else {
+    res.status(404).end();
+  }
 })
-
-//need log out route to destroy cookie session
 //https://courses.bootcampspot.com/courses/563/pages/14-dot-2-6-add-logic-to-destroy-the-session?module_item_id=161959
   module.exports = router;
