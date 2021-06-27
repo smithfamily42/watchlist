@@ -1,1 +1,8 @@
 /* RESET? css framework? */
+.create-button:visited {
+    text-decoration: none;
+}
+
+.create-button:link {
+    text-decoration: none;
+}
