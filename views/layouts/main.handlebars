@@ -7,6 +7,7 @@
   <title> {{ pageTitle }} </title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -37,6 +38,35 @@
     <main>
       {{{ body }}}
     </main>
+
+    {{!-- footer --}}
+    <footer class="text-center bg-light text-muted">
+      <section class="my-3">
+        
+          <div class="rowtext-center p-" style="background-color: rgba(0, 0, 0, 0.05);">
+            <p class="fs-4">Contributors</p>
+          </div>
+          
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/salask24" role="button">
+              <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Kim</i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/abbycav7" role="button">
+              <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Abby</i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/smithfamily42" role="button">
+              <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Brad</i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/RotichD" role="button">
+              <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Dylan</i>
+            </a>
+          
+        
+      </section>
+      <div class="text-center p-" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://teamwatchlist.herokuapp.com">teamwatchlist.herokuapp.com</a>
+      </div>
+    </footer>
   </div>
 
 </body>
