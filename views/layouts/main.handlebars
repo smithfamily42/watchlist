@@ -36,62 +36,64 @@
       </div>
     </nav> --}}
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container">
-    <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="https://mdbgo.com/">
-      <img
-        src="/images/watchlist-logo.svg"
-        height="50"
-        alt="homepage logo"
-        loading="lazy"
-        style="margin-top: -1px;"
-      />
-    </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="/">
+          <img
+            src="/images/watchlist-logo.svg"
+            height="50"
+            alt="homepage logo"
+            loading="lazy"
+            style="margin-top: -1px;"
+          />
+        </a>
 
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarButtonsExample"
-      aria-controls="navbarButtonsExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarButtonsExample">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/towatch" target="_blank">Dashboard</a>
-        </li>
-      </ul>
-      <!-- Left links -->
-
-      <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-link px-3 me-2">
-          <a href="/login">Login</a>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarButtonsExample"
+          aria-controls="navbarButtonsExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
         </button>
-        <button type="button" class="btn btn-primary me-3">
-          <a href="/login" class="text-white create-button">Create an account</a>
-        </button>
-        <a
-          class="btn btn-dark px-3 py-1"
-          href="https://github.com/smithfamily42/watchlist"
-          role="button"
-          ><i class="bi-github text-white fs-5" role="img" aria-label="GitHub"></i></a>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-secondary ms-3 py-0">
+                <a class="nav-link" href="/mylist">My List</a>
+              </button>
+            </li>
+          </ul>
+          <!-- Left links -->
+
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-link px-3 me-2">
+              <a href="/login">Login</a>
+            </button>
+            <button type="button" class="btn btn-primary me-3">
+              <a href="/login" class="text-white create-button">Create an account</a>
+            </button>
+            <a
+              class="btn btn-dark px-3 py-1"
+              href="https://github.com/smithfamily42/watchlist"
+              role="button"
+              ><i class="bi-github text-white fs-5" role="img" aria-label="GitHub"></i></a>
+          </div>
+        </div>
+        <!-- Collapsible wrapper -->
       </div>
-    </div>
-    <!-- Collapsible wrapper -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
     <main>
       {{{ body }}}
     </main>

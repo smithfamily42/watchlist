@@ -76,11 +76,11 @@ router.get('/movies', (req, res) => {
   res.render('movies', data);
 });
 
-router.get('/towatch', (req, res) => { // This is a new route to put both movies and shows on the same page. needs to be connected to Sequelize
+router.get('/mylist', (req, res) => { // This is a new route to put both movies and shows on the same page. needs to be connected to Sequelize
   const data = {
     movies: [],
     shows: [],
-    pagetitle: 'Watchlist',
+    pageTitle: 'My List',
   };
   for (let i = 0; i < movies.length; i++) {
     let currentMovie = movies[i];
@@ -90,7 +90,7 @@ router.get('/towatch', (req, res) => { // This is a new route to put both movies
     let currentShow = shows[i];
     data.shows.push(currentShow);
   };
-  res.render('towatch', data);
+  res.render('mylist', data);
 })
 
 router.post('/', (req, res) => {
