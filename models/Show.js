@@ -41,7 +41,8 @@ Show.init (
         //can add in get route with a where parameter
         show_user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: true,
             references: {
                 model: 'user',
                 //getting from user model
