@@ -12,6 +12,10 @@
     min-height: 79vh;
 }
 
+.logo-background {
+    background: #0466c8; 
+}
+
 /* Centers "My List" button when nav bar is collapsed */
 @media (max-width: 768px) {
     .navbar .navbar-nav {
@@ -36,4 +40,6 @@
         min-height: 70vh;
     }
 }
+
+
 
