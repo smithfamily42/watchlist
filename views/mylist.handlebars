@@ -27,20 +27,19 @@
 </ul>
 <!-- tabs navs -->
 
-
 <!-- tabs content -->
-<div class="tab-content shadow-sm" id="ex2-content">
+<div class="tab-content" id="ex2-content">
   <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1">
     <div class="container justify-content-around">
-      <div class="row justify-content-center mb-3">
+      <div class="row justify-content-center mb-3 shadow">
         <div class="col-11">
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Genre</th>
-                <th scope="col">Rating</th>
                 <th scope="col">Studio</th>
+                <th scope="col">Rating</th>
               </tr>
             </thead>
             <tbody>
@@ -48,8 +47,8 @@
               <tr>
                 <th scope="row">{{title}}</th>
                 <td>{{genre}}</td>
-                <td>{{rating}}</td>
                 <td>{{studio}}</td>
+                <td>{{rating}}</td>
               </tr>
               {{/each}}
             </tbody>
@@ -88,3 +87,95 @@
   </div>
 </div>
 <!-- tabs content -->
+
+{{!-- More Entertainment Section --}}
+<section>
+  <h1 class="display-6 text-center mb-4">Add To Lists</h1>
+
+  <div class="container">
+    {{!-- Add Movie  --}}
+    <div class="row justify-content-center shadow my-3">
+      <form action="add-movie" class="row col-11">
+        <h2 class="display-6 fs-3">Add Movie</h2>
+        <div class="col-md-6 col-lg-8">
+          <label for="intputTitle-m" class="form-label" >Title</label>
+          <input type="text" class="form-control" id="intputTitle-m" placeholder="Enter Movie Title Here"/>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <label for="inputGenre-m" class="form-label">Genre</label>
+          <select name="Genre" id="inputGenre-m" class="form-select">
+            <option selected>Choose...</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
+          </select>
+        </div>
+        <div class="col-md-6 col-lg-8">
+          <label for="inputStudio" class="form-label">Studio</label>
+          <input type="text" class="form-control" id="inputStudio" placeholder="Enter Studio Name Here"/>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <label for="inputRating-m" class="form-label">Rating</label>
+          <select name="Rating" id="inputRating-m" class="form-select">
+            <option selected>Choose...</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+            <option value="NC-17">NC-17</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary col my-3 mx-3">Update Movies</button>
+      </form>
+    </div>
+    {{!-- Add Movie  --}}
+    {{!-- Add Show  --}}
+    <div class="row justify-content-center shadow my-3">
+      <form action="add-show" class="row col-11">
+        <h2 class="display-6 fs-3">Add Show</h2>
+        <div class="col-md-6 col-lg-8">
+          <label for="inputTitle-s" class="form-label" >Title</label>
+          <input type="text" class="form-control" id="inputTitle-s" placeholder="Enter Show Title Here"/>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <label for="inputGenre-s" class="form-label">Genre</label>
+          <select name="Genre" id="inputGenre-s" class="form-select">
+            <option selected>Choose...</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
+          </select>
+        </div>
+        <div class="col-md-6 col-lg-8">
+          <label for="inputService" class="form-label">Service</label>
+          <input type="text" class="form-control" id="inputService" placeholder="Enter Streaming Service Name Here"/>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <label for="inputRating" class="form-label">Rating</label>
+          <select name="Rating" id="inputRating" class="form-select">
+            <option selected>Choose...</option>
+            <option value="TV-Y">TV-Y</option>
+            <option value="TY-Y7">TY-Y7</option>
+            <option value="TV-Y7-FV">TV-Y7-FV</option>
+            <option value="TV-G">TV-G</option>
+            <option value="TV-PG">TV-PG</option>
+            <option value="TV-14">TV-14</option>
+            <option value="TV-MA">TV-MA</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary col my-3 mx-3">Update Shows</button>
+      </form>
+    </div>
+    {{!-- Add Show  --}}
+  </div>
+</section>
