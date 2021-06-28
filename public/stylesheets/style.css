@@ -1,8 +1,25 @@
-/* RESET? css framework? */
+/* Removes underline from create account button*/
 .create-button:visited {
     text-decoration: none;
 }
 
 .create-button:link {
     text-decoration: none;
+}
+
+/* Centers "My List" button when nav bar is collapsed */
+@media (max-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .some-space {
+        margin-bottom: 10px;
+    }
 }
