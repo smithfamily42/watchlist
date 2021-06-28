@@ -16,6 +16,16 @@
     background: #0466c8; 
 }
 
+.sub-text {
+    font-family: 'Alfa Slab One', cursive;
+    font-style: italic;
+    color: #03366d;
+}
+
+.dark-blue {
+    color: #03366d;
+}
+
 /* Centers "My List" button when nav bar is collapsed */
 @media (max-width: 768px) {
     .navbar .navbar-nav {
