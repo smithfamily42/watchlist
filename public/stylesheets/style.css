@@ -8,6 +8,9 @@
     text-decoration: none;
 }
 
+.pageSize {
+    min-height: 79vh;
+}
 
 /* Centers "My List" button when nav bar is collapsed */
 @media (max-width: 768px) {
@@ -27,6 +30,10 @@
 
     footer {
         height: 20vh;
+    }
+
+    .pageSize {
+        min-height: 70vh;
     }
 }
 
