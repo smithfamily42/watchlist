@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> {{ pageTitle }} </title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="shortcut icon" type="image/png" href="/images/watchlist-logo-favicon.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">  
 </head>
 
 <body>
   <div class="wrapper">
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    {{!-- <nav class="navbar navbar-expand navbar-light bg-light">
       <div class="container-fluid">
-        
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav container justify-content-center align-content-evenly">
             <div class="row">
@@ -34,35 +37,94 @@
           </ul>
     </div>
       </div>
+    </nav> --}}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="/">
+          <img
+            src="/images/watchlist-logo.svg"
+            height="50"
+            alt="homepage logo"
+            loading="lazy"
+            style="margin-top: -1px;"
+          />
+        </a>
+
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navCollapse"
+          aria-controls="navCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <button type="button" class="btn btn-outline-secondary ms-3 py-0 px-3 nav-link some-space">
+                <a class="nav-link active" href="/mylists">My Lists</a>
+              </button>
+            </li>
+          </ul>
+          <!-- Left links -->
+
+          <div class="d-flex align-items-center justify-content-center">
+            <button type="button" class="btn btn-link px-3 me-2">
+              <a href="/login">Login</a>
+            </button>
+            <button type="button" class="btn btn-primary me-3">
+              <a href="/login" class="text-white create-button">Create an account</a>
+            </button>
+            <a
+              class="btn btn-dark px-3 py-1"
+              href="https://github.com/smithfamily42/watchlist"
+              role="button"
+              ><i class="bi-github text-white fs-5" role="img" aria-label="GitHub"></i></a>
+          </div>
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
     </nav>
+    <!-- Navbar -->
     <main>
       {{{ body }}}
     </main>
 
     {{!-- footer --}}
-    <footer class="text-center bg-light text-muted">
-      <section class="my-3">
+    <footer class="text-center bg-light text-muted mt-auto">
+      <section class="my-0">
         
-          <div class="rowtext-center p-" style="background-color: rgba(0, 0, 0, 0.05);">
-            <p class="fs-4">Contributors</p>
+          <div class="rowtext-center p-0" style="background-color: rgba(0, 0, 0, 0.05);">
+            <h3 class="fs-4 display-4 dark-blue">Contributors</h3>
           </div>
           
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/salask24" role="button">
+            <a class="btn btn-outline-light btn-floating mx-1 my-0" href="https://github.com/salask24" role="button" target="_blank">
               <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Kim</i>
             </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/abbycav7" role="button">
+            <a class="btn btn-outline-light btn-floating mx-1 my-0" href="https://github.com/abbycav7" role="button" target="_blank">
               <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Abby</i>
             </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/smithfamily42" role="button">
+            <a class="btn btn-outline-light btn-floating mx-1 my-0" href="https://github.com/smithfamily42" role="button" target="_blank">
               <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Brad</i>
             </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/RotichD" role="button">
+            <a class="btn btn-outline-light btn-floating mx-1 my-0" href="https://github.com/RotichD" role="button" target="_blank">
               <i class="bi-github text-dark fs-4" role="img" aria-label="GitHub">Dylan</i>
             </a>
-          
+          {{!-- Each Icon Links to our respective github profiles --}}
         
       </section>
-      <div class="text-center p-" style="background-color: rgba(0, 0, 0, 0.05);">
+      <div class="text-center p-0 dark-blue" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2021 Copyright:
         <a class="text-reset fw-bold" href="https://teamwatchlist.herokuapp.com">teamwatchlist.herokuapp.com</a>
       </div>
@@ -70,5 +132,6 @@
   </div>
 
 </body>
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
