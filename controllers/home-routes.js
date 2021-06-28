@@ -76,6 +76,23 @@ router.get('/movies', (req, res) => {
   res.render('movies', data);
 });
 
+router.get('/mylists', (req, res) => { // This is a new route to put both movies and shows on the same page. needs to be connected to Sequelize
+  const data = {
+    movies: [],
+    shows: [],
+    pageTitle: 'My Lists',
+  };
+  for (let i = 0; i < movies.length; i++) {
+    let currentMovie = movies[i];
+    data.movies.push(currentMovie);
+  };
+  for (let i = 0; i < shows.length; i++) { //For now shows is not defined. Needs to somehow connect it to the db
+    let currentShow = shows[i];
+    data.shows.push(currentShow);
+  };
+  res.render('mylists', data);
+})
+
 router.post('/', (req, res) => {
 
 });
