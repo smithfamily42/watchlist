@@ -1,51 +1,90 @@
-<div class="container justify-content-around">
-  <div class="row justify-content-center mb-3">
-    <div class="col-11">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Studio</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each movies}}
-          <tr>
-            <th scope="row">{{title}}</th>
-            <td>{{genre}}</td>
-            <td>{{rating}}</td>
-            <td>{{studio}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
+<!-- Pills navs -->
+<ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+  <li class="nav-item  mx-3" role="presentation">
+    <a
+      class="nav-link active display-6"
+      id="ex2-tab-1"
+      data-bs-toggle="tab"
+      href="#ex2-tabs-1"
+      role="tab"
+      aria-controls="ex2-tabs-1"
+      aria-selected="true"
+      >My Movies</a
+    >
+  </li>
+  <li class="nav-item  mx-3" role="presentation">
+    <a
+      class="nav-link display-6"
+      id="ex2-tab-2"
+      data-bs-toggle="tab"
+      href="#ex2-tabs-2"
+      role="tab"
+      aria-controls="ex2-tabs-2"
+      aria-selected="false"
+      >My Shows</a
+    >
+  </li>
+</ul>
+<!-- tabs navs -->
+
+
+<!-- tabs content -->
+<div class="tab-content shadow-sm" id="ex2-content">
+  <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1">
+    <div class="container justify-content-around">
+      <div class="row justify-content-center mb-3">
+        <div class="col-11">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Studio</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each movies}}
+              <tr>
+                <th scope="row">{{title}}</th>
+                <td>{{genre}}</td>
+                <td>{{rating}}</td>
+                <td>{{studio}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row justify-content-center mb-3">
-    <div class="col-11">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Service</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each shows}}
-          <tr>
-            <th scope="row">{{title}}</th>
-            <td>{{genre}}</td>
-            <td>{{rating}}</td>
-            <td>{{service}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
+  <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+    <div class="container justify-content-around">
+      <div class="row justify-content-center mb-3">
+        <div class="col-11">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Service</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each shows}}
+              <tr>
+                <th scope="row">{{title}}</th>
+                <td>{{genre}}</td>
+                <td>{{rating}}</td>
+                <td>{{service}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
+<!-- tabs content -->
