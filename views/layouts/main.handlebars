@@ -16,28 +16,6 @@
 
 <body>
   <div class="wrapper">
-    {{!-- <nav class="navbar navbar-expand navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav container justify-content-center align-content-evenly">
-            <div class="row">
-              <li class="nav-item col-6 col-sm-3 col-md-">
-                <a class="nav-link active display-3" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item col-6 col-sm-3">
-                <a class="nav-link display-3" href="/movies">Movies</a>
-              </li>
-              <li class="nav-item col-6 col-sm-3">
-                <a class="nav-link display-3" href="/shows">Shows</a>
-              </li>
-              <li class="nav-item col-6 col-sm-3">
-                <a href="/login" class="nav-link display-3 justify-content-end">Login</a>
-              </li>
-            </div>
-          </ul>
-    </div>
-      </div>
-    </nav> --}}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <!-- Container wrapper -->
@@ -79,9 +57,15 @@
           <!-- Left links -->
 
           <div class="d-flex align-items-center justify-content-center">
+            {{#if loggedIn}}
+            <button type="button" class="btn btn-link px-3 me-2">
+              <a href="/logout">Logout</a>
+            </button>
+            {{else}}
             <button type="button" class="btn btn-link px-3 me-2">
               <a href="/login">Login</a>
             </button>
+            {{/if}}
             <button type="button" class="btn btn-primary me-3">
               <a href="/login" class="text-white create-button">Create an account</a>
             </button>
@@ -134,4 +118,5 @@
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/javascript/logout.js"></script>
 </html>
