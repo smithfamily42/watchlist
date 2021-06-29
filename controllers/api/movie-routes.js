@@ -1,7 +1,18 @@
-const router = require('express').Router();;
+const router = require('express').Router();
 const { Movie } = require("../../models");
 
-Movie.create
+// get all users
+router.get('/', (req, res) => {
+    Movie.findAll({
+        attributes: { exclude: ['password'] }
+    })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 
 //this route is movie/
 router.post('/', (req, res) => {

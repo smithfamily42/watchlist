@@ -1,6 +1,21 @@
 const router = require('express').Router();
 const { Show } = require("../../models");
 
+
+// get all users
+router.get('/', (req, res) => {
+    Show.findAll({
+        attributes: { exclude: ['password'] }
+    })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+
 //this route is show/
 router.post('/', (req, res) => {
     // expects {title: 'austin powers', genre: 'spoof', rating: 'PG-13', studio:'New Line Cinema/ Warner Bros.'}
