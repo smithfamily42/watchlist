@@ -37,7 +37,7 @@ Movie.init (
             type: DataTypes.STRING,
             allowNull: false
         },
-        movie_user_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
             defaultValue: true,

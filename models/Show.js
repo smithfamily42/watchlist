@@ -39,7 +39,7 @@ Show.init (
         //this will specific to the user
         //will only give back shows that specific user is watching
         //can add in get route with a where parameter
-        show_user_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
             defaultValue: true,

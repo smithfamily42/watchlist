@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { Show } = require("../../models");
 
+Show.create
+// get all shows
+router.get('/', (req, res) => {
+    Show.findAll({})
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 //this route is show/
 router.post('/', (req, res) => {
     // expects {title: 'austin powers', genre: 'spoof', rating: 'PG-13', studio:'New Line Cinema/ Warner Bros.'}

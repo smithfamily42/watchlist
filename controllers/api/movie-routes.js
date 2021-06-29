@@ -1,7 +1,16 @@
-const router = require('express').Router();;
+const router = require('express').Router();
 const { Movie } = require("../../models");
 
 Movie.create
+// get all movies
+router.get('/', (req, res) => {
+    Movie.findAll({ })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 //this route is movie/
 router.post('/', (req, res) => {
