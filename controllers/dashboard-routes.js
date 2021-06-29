@@ -5,6 +5,7 @@ const { User, Movie, Show } = require('../models');
 const withAuth = require('../utils/auth');
 //routes
 
+/*
 router.get('/', withAuth, (req, res) => {
     Movie.findAll({
         where: { user_id: req.session.user_id },
@@ -25,6 +26,8 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 router.get('/', withAuth, (req, res) => {
     Show.findAll({
         where: { user_id: req.session.user_id },
@@ -57,10 +60,10 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-
+*/
 
 //this route is /dashboard/
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         //what we want to pull out of here
@@ -70,12 +73,22 @@ router.get('/', (req, res) => {
         },
         include: [
             {
-                model: Movie
-                // attributes only needed for pulling specific columns
-                //if you want ALL then just do model
+                model: Movie,
+                attributes: [
+                    'title',
+                    'genre',
+                    'rating',
+                    'studio'
+                ]
             },
             {
-                model: Show
+                model: Show,
+                attributes: [
+                    'title',
+                    'genre',
+                    'rating',
+                    'service'
+                ]
             }
         ]
 
@@ -86,7 +99,7 @@ router.get('/', (req, res) => {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
-            res.render('dashboard', {
+            res.render('mylists', {
                 data: dbUserData,
                 loggedIn: req.session.loggedIn,
                 username: req.session.username
