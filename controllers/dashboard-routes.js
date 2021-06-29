@@ -1,7 +1,7 @@
 //user profile 
 const router = require('express').Router();
 const sequelize = require('../config/connection.js');
-const { User, Movie, Show } = require('../models');
+const { User, Movie, Shows } = require('../models');
 const withAuth = require('../utils/auth');
 //routes
 
@@ -29,7 +29,7 @@ router.get('/', withAuth, (req, res) => {
 
 
 router.get('/', withAuth, (req, res) => {
-    Show.findAll({
+    Shows.findAll({
         where: { user_id: req.session.user_id },
         attributes: [
             'title',
@@ -82,7 +82,7 @@ router.get('/', withAuth, (req, res) => {
                 ]
             },
             {
-                model: Show,
+                model: Shows,
                 attributes: [
                     'title',
                     'genre',

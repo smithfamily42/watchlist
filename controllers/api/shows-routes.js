@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const { Show } = require("../../models");
+const { Shows } = require("../../models");
 
-Show.create
 // get all shows
 router.get('/', (req, res) => {
-    Show.findAll({})
+    Shows.findAll({})
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
@@ -12,10 +11,10 @@ router.get('/', (req, res) => {
         });
 });
 
-//this route is show/
+//this route is shows/
 router.post('/', (req, res) => {
     // expects {title: 'austin powers', genre: 'spoof', rating: 'PG-13', studio:'New Line Cinema/ Warner Bros.'}
-    Show.create({
+    Shows.create({
         title: req.body.title,
         genre: req.body.genre,
         rating: req.body.rating,
@@ -33,9 +32,9 @@ router.post('/', (req, res) => {
 
 
 //update
-//this route is show/:id
+//this route is shows/:id
 router.put('/:id', (req, res) => {
-    Show.update(
+    Shows.update(
         {
             title: req.body.title
         },
@@ -60,9 +59,9 @@ router.put('/:id', (req, res) => {
 
 
 //delete
-//this route is show/:id
+//this route is shows/:id
 router.delete('/:id', (req, res) => {
-    Show.destroy({
+    Shows.destroy({
         where: {
             id: req.session.user_id
         }

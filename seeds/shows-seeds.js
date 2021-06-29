@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Show } = require('../models');
+const { Shows } = require('../models');
 
 const showdata = [
   {
@@ -29,7 +29,6 @@ const showdata = [
     rating: 'tv-14',
     service: 'NBC',
     user_id: 1
-
   },
   {
     title: 'Mare of Easttown',
@@ -72,9 +71,9 @@ const showdata = [
     rating: 'tv-14',
     service: 'ABC',
     user_id: 1
-  },
+  }
 ];
 
-const seedShows = () => Show.bulkCreate(showdata, {individualHooks: true});
+const seedShows = () => Shows.bulkCreate(showdata, {individualHooks: true});
 
 module.exports = seedShows;

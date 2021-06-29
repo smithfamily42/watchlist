@@ -71,7 +71,7 @@ const moviedata = [
     rating: 'R',
     studio: 'Warner Bros',
     user_id: 3
-  },
+  }
 ];
 
 const seedMovies = () => Movie.bulkCreate(moviedata, {individualHooks: true});
