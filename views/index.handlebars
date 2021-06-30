@@ -9,6 +9,8 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center gy-4">
+            {{#if loggedIn}}
+            {{else}}
             <div class="col-12 col-lg-4">
                 <p class="text-center display-4 fs-4 px-3">Easily add and save movie and show data to your own personal list. Now you don't have to worry about forgetting the name of that show your friend told you to watch!</p>
             </div>
@@ -19,6 +21,7 @@
                     </a>
                 </button>
             </div>
+            {{/if}}
         </div>
     </div>
 </section>
