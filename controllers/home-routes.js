@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
+
 
 // get all posts for homepage
 // users email and pw - must log in before using the site
@@ -26,6 +28,23 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// get all movies
+router.get('/', (req, res) => {
+  Movie.findAll({
+    attributes: [
+      'title',
+      'genre',
+      'rating',
+      'studio'
+    ]
+  })
+    .then(dbUserData => res.json(dbUserData))
+
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+});
 
 module.exports = router;
 

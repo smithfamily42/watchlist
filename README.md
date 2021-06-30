@@ -37,3 +37,12 @@ Watchlist: https://teamwatchlist.herokuapp.com/
 
 
 ![Screenshot](public/images/screenshot-1.png)
+
+## Contributors
+* Dylan Rotich https://github.com/RotichD
+* Kimberly Salas https://github.com/salask24
+* Abby Sexton https://github.com/abbycav7
+* Brad Smith https://github.com/smithfamily42
+
+## License
+MIT License is used for this project. Please refer to the license.txt file for more details.

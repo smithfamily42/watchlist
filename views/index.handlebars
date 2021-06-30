@@ -2,7 +2,8 @@
     <div class="container px-0">
         <div class="row justify-content-center mx-0 mb-5">
             <div class="col-12 col-lg-6">
-                <img src="/images/Watchlist-jumbo-logo.svg" alt="Watchlist Logo" class="img-fluid animate__animated animate__bounce" />
+                <img src="/images/Watchlist-jumbo-logo.svg" alt="Watchlist Logo"
+                    class="img-fluid animate__animated animate__bounce" />
             </div>
             <div class="col-lg-12 py-3">
                 <h1 class="text-center sub-text">Your Personal Movie and Show "To-Do List"</h1>
@@ -10,12 +11,188 @@
         </div>
         <div class="row d-flex justify-content-center gy-4">
             {{#if loggedIn}}
+            <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+                <li class="nav-item  mx-3" role="presentation">
+                    <a class="nav-link active display-6" id="ex2-tab-1" data-bs-toggle="tab" href="#ex2-tabs-1"
+                        role="tab" aria-controls="ex2-tabs-1" aria-selected="true">Featured Movies</a>
+                </li>
+                <li class="nav-item  mx-3" role="presentation">
+                    <a class="nav-link display-6" id="ex2-tab-2" data-bs-toggle="tab" href="#ex2-tabs-2" role="tab"
+                        aria-controls="ex2-tabs-2" aria-selected="false">Featured Shows</a>
+                </li>
+            </ul>
+            <!-- tabs navs -->
+            <div class="tab-content" id="ex2-content">
+                <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1">
+                    <div class="container justify-content-around">
+                        <div class="row justify-content-center mb-3 shadow">
+                            <div class="col-11">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Genre</th>
+                                            <th scope="col">Studio</th>
+                                            <th scope="col">Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Lilo and Stitch</th>
+                                            <td>family</td>
+                                            <td>Disney</td>
+                                            <td>PG</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Titanic</th>
+                                            <td>romance</td>
+                                            <td>Fox</td>
+                                            <td>PG-13</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Forrest Gump</th>
+                                            <td>drama</td>
+                                            <td>Paramount</td>
+                                            <td>PG-13</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Avatar</th>
+                                            <td>action</td>
+                                            <td>Fox</td>
+                                            <td>PG-13</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Avengers: Endgame</th>
+                                            <td>action</td>
+                                            <td>Marvel</td>
+                                            <td>PG-13</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Citizen Kane</th>
+                                            <td>drama</td>
+                                            <td>RKO Radio Pictures</td>
+                                            <td>PG</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Pyscho</th>
+                                            <td>horror</td>
+                                            <td>Paramount</td>
+                                            <td>R</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Wall-E</th>
+                                            <td>family</td>
+                                            <td>Pixar</td>
+                                            <td>G</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Gone with the Wind</th>
+                                            <td>romance</td>
+                                            <td>MGM</td>
+                                            <td>G</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Joker</th>
+                                            <td>crime</td>
+                                            <td>Warner Bros</td>
+                                            <td>R</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+                    <div class="container justify-content-around">
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-11">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Genre</th>
+                                            <th scope="col">Rating</th>
+                                            <th scope="col">Service</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Loki</th>
+                                            <td>action</td>
+                                            <td>tv-14</td>
+                                            <td>Disney+</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sweet Tooth</th>
+                                            <td>action</td>
+                                            <td>tv-14</td>
+                                            <td>Netflix+</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">The Handmaids Tale</th>
+                                            <td>drama</td>
+                                            <td>tv-ma</td>
+                                            <td>Hulu</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Manifest</th>
+                                            <td>drama</td>
+                                            <td>tv-14</td>
+                                            <td>NBC</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Mare of Easttown</th>
+                                            <td>crime</td>
+                                            <td>tv-ma</td>
+                                            <td>HBO</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Lupin</th>
+                                            <td>action</td>
+                                            <td>tv-ma</td>
+                                            <td>Netflix+</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Friends</th>
+                                            <td>comedy</td>
+                                            <td>tv-pg</td>
+                                            <td>HBO max</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Game of Thrones</th>
+                                            <td>action</td>
+                                            <td>tv-ma</td>
+                                            <td>HBO max</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">The Walking Dead</th>
+                                            <td>horror</td>
+                                            <td>tv-14</td>
+                                            <td>AMC</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Greys Anatomy</th>
+                                            <td>drama</td>
+                                            <td>tv-14</td>
+                                            <td>ABC</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{else}}
             <div class="col-12 col-lg-4">
-                <p class="text-center display-4 fs-4 px-3">Easily add and save movie and show data to your own personal list. Now you don't have to worry about forgetting the name of that show your friend told you to watch!</p>
+                <p class="text-center display-4 fs-4 px-3">Easily add and save movie and show data to your own personal
+                    list. Now you don't have to worry about forgetting the name of that show your friend told you to
+                    watch!</p>
             </div>
             <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-                <button type="button" class="btn btn-primary px-5 py-3 animate__animated aniamte animate__flash animate__delay-2s animate__slow">
+                <button type="button"
+                    class="btn btn-primary px-5 py-3 animate__animated aniamte animate__flash animate__delay-2s animate__slow">
                     <a href="/login" class="text-white create-button">
                         Get Started!
                     </a>
