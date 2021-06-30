@@ -5,7 +5,7 @@ const { User, Movie, Shows } = require('../models');
 const withAuth = require('../utils/auth');
 //routes
 
-/*
+
 router.get('/', withAuth, (req, res) => {
     Movie.findAll({
         where: { user_id: req.session.user_id },
@@ -27,7 +27,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-
+/*
 router.get('/', withAuth, (req, res) => {
     Shows.findAll({
         where: { user_id: req.session.user_id },
