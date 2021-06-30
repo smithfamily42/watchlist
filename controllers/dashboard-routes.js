@@ -60,7 +60,7 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-*/
+
 
 //this route is /dashboard/
 router.get('/', withAuth, (req, res) => {
@@ -81,7 +81,7 @@ router.get('/', withAuth, (req, res) => {
                     'studio'
                 ]
             },
-            {
+            /*{
                 model: Shows,
                 attributes: [
                     'title',
@@ -95,14 +95,15 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             //! means false = not true
+            console.log(dbUserData);
             if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
             res.render('mylists', {
                 data: dbUserData,
-                loggedIn: req.session.loggedIn,
-                username: req.session.username
+               loggedIn: req.session.loggedIn,
+                username: req.session.username 
             });
         })
         .catch(err => {
@@ -110,5 +111,5 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
+*/
 module.exports = router;
