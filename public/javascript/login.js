@@ -40,7 +40,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/mylists');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }

@@ -7,8 +7,12 @@ const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
   const data = {
-    pageTitle: 'Homepage'
+    pageTitle: 'Homepage',
+    loggedIn: (req.session.loggedIn)
   };
+  if (!req.session.loggedIn) {
+    data.loggedIn = false;
+  }
   res.render('index', data);
 });
 
