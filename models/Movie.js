@@ -40,7 +40,7 @@ Movie.init (
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
-            defaultValue: "true",
+            defaultValue: 0,
             references: {
                 model: 'user',
                 //getting from user model
