@@ -5,13 +5,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Show extends Model {
+class Shows extends Model {
 
 }
 
 
 //initializing table definition
-Show.init (
+Shows.init (
     {
         id: {
             type: DataTypes.INTEGER,
@@ -39,7 +39,7 @@ Show.init (
         //this will specific to the user
         //will only give back shows that specific user is watching
         //can add in get route with a where parameter
-        show_user_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
             defaultValue: true,
@@ -58,8 +58,8 @@ Show.init (
         //making timestamp false will NOT add created_at and updated_at columns in DB 
         freezeTableName: true,
         underscored: true,
-        modelName: 'show'
+        modelName: 'shows'
     }
 )
 
-module.exports = Show;
+module.exports = Shows;

@@ -1,8 +1,8 @@
 const seedUsers = require('./user-seeds');
 
 const sequelize = require('../config/connection');
-const seedShows = require('./show-seeds');
 const seedMovies = require('./movie-seeds');
+const seedShows = require('./shows-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -10,10 +10,12 @@ const seedAll = async () => {
   await seedUsers();
 
   console.log('--------------');
-  await seedMovies();
+  await seedShows();
 
   console.log('--------------');
-  await seedShows();
+  await seedMovies();
+
+  
 
   process.exit(0);
 };
