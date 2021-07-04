@@ -95,7 +95,7 @@
   <div class="container">
     {{!-- Add Movie  --}}
     <div class="row justify-content-center shadow my-3">
-      <form action="add-movie" class="row col-11">
+      <form action="add-movie" class="row col-11" id="add-movie">
         <h2 class="display-6 fs-3">Add Movie</h2>
         <div class="col-md-6 col-lg-8">
           <label for="intputTitle-m" class="form-label" >Title</label>
@@ -131,13 +131,13 @@
             <option value="NC-17">NC-17</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary col my-3 mx-3">Update Movies</button>
+        <button type="submit" class="btn btn-primary col my-3 mx-3">Add Movies</button>
       </form>
     </div>
     {{!-- Add Movie  --}}
     {{!-- Add Show  --}}
     <div class="row justify-content-center shadow my-3">
-      <form action="add-show" class="row col-11">
+      <form action="add-show" class="row col-11" id="add-show">
         <h2 class="display-6 fs-3">Add Show</h2>
         <div class="col-md-6 col-lg-8">
           <label for="inputTitle-s" class="form-label" >Title</label>
@@ -175,7 +175,7 @@
             <option value="TV-MA">TV-MA</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary col my-3 mx-3">Update Shows</button>
+        <button type="submit" class="btn btn-primary col my-3 mx-3">Add Shows</button>
       </form>
     </div>
     {{!-- Add Show  --}}

@@ -54,5 +54,5 @@ async function showFormHandler(event) {
 }
 
 
-document.querySelector('.add-movie').addEventListener('submit', movieFormHandler);
-document.querySelector('.add-show').addEventListener('submit', showFormHandler);
+document.querySelector('#add-movie').addEventListener('submit', movieFormHandler);
+document.querySelector('#add-show').addEventListener('submit', showFormHandler);

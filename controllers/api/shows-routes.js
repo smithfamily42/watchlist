@@ -18,7 +18,8 @@ router.post('/', (req, res) => {
         title: req.body.title,
         genre: req.body.genre,
         rating: req.body.rating,
-        service: req.body.service
+        service: req.body.service,
+        user_id: req.session.user_id
     })
         //promises 
         //.then stores good information and sends it to the front end
@@ -40,7 +41,7 @@ router.put('/:id', (req, res) => {
         },
         {
             where: {
-                id: req.session.user_id
+                id: req.params.id
             }
         }
     )
@@ -63,7 +64,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Shows.destroy({
         where: {
-            id: req.session.user_id
+            id: req.params.id
         }
     })
         .then(dbPostData => {
