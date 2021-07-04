@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         genre: req.body.genre,
         rating: req.body.rating,
         studio: req.body.studio,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbMovieData => res.json(dbMovieData))
     .catch(err => {
