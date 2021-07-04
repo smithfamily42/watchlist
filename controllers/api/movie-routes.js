@@ -12,6 +12,22 @@ router.get('/', (req, res) => {
         });
 });
 
+//add a movie
+router.post('/', (req, res) => {
+    //needs title, genre, rating, studio, user_id
+    Movie.create({
+        title: req.body.title,
+        genre: req.body.genre,
+        rating: req.body.rating,
+        studio: req.body.studio,
+        user_id: req.body.user_id
+    })
+    .then(dbMovieData => res.json(dbMovieData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
     //update
     //this route is movie/:id
