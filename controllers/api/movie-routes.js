@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
             },
             {
                 where: {
-                    id: req.session.user_id
+                    id: req.params.id
                 }
             }
         )
@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
     router.delete('/:id', (req, res) => {
         Movie.destroy({
             where: {
-                id: req.session.user_id
+                id: req.params.id
             }
         })
             .then(dbPostData => {
