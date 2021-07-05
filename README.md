@@ -11,7 +11,7 @@ We have all been in the unfortunate situation where we spend precious time looki
 As a user/entertainment enjoyer I would like an app that would provide movies and tv shows for me to select from so that I can build a complete and detailed watchlist to later choose from. 
 
 # Functionality and Features:
-A user will be able to search through a plethora of top movies and tv shows. Once they select the movies and tv shows that they would like to watch, it will be compiled in two lists, readily available to them when they feel the need to binge. 
+After creating an account and logging in, a user will be presented with featured movies and shows on the homepage. After navigating to their "mylists" page, they'll have the ability to add movies and shows to their own lists. Their own personal picks will be readily available to them when they feel the need to binge. 
 
 
 # Technologies:
